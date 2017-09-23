@@ -45,6 +45,7 @@ def get_bigrams(lemmas):
 def add_bigrams(lemmas):
     return lemmas + get_bigrams(lemmas)
     
+    
 def prepare_texts(texts, bigrams = False, join = True):
     """ Apply the full preprocessing pipeline to texts
     """
