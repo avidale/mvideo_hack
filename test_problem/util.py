@@ -36,6 +36,7 @@ def get_normal_form(word):
         return normal_form
 
 def lemmatize(words):
+    # ToDo: maybe make parallel, because it is VERY slow
     return [get_normal_form(word) for word in words]
 
 def get_bigrams(lemmas):
@@ -44,7 +45,13 @@ def get_bigrams(lemmas):
 def add_bigrams(lemmas):
     return lemmas + get_bigrams(lemmas)
     
-def prepare_texts(texts):
+def prepare_texts(texts, bigrams = False, join = True):
     """ Apply the full preprocessing pipeline to texts
     """
-    return pd.Series(texts).apply(replace_smiles).apply(tokenize).apply(lemmatize).apply(add_bigrams).apply(lambda x:' '.join(x))
+    #ToDo: also remove punctuation, or maybe make special punctuation features.
+    result = pd.Series(texts).apply(replace_smiles).apply(tokenize).apply(lemmatize)
+    if bigrams:
+        result = result.apply(add_bigrams)
+    if join:
+        result = result.apply(lambda x:' '.join(x))
+    return result
