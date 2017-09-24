@@ -7,4 +7,4 @@
 
 Решение ещё дорабатывается. Следите за обновлениями!
 
-[image with robot](presentation/syntetic.png "Outline of our solution")
+![image with robot](presentation/syntetic.png "Outline of our solution")
