@@ -41,6 +41,9 @@ def lemmatize(words):
 
 def get_bigrams(lemmas):
     return [w1+'_'+w2 for w1, w2 in zip(lemmas[:-1], lemmas[1:])]
+    
+def get_trigrams(lemmas):
+    return [w1+'_'+w2+'_'+w3 for w1, w2, w3 in zip(lemmas[:-2], lemmas[1:-1], lemmas[2:])]
 
 def add_bigrams(lemmas):
     return lemmas + get_bigrams(lemmas)
