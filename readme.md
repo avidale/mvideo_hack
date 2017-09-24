@@ -6,3 +6,5 @@
 * product_properties - определение значимых атрибутов товара на основе конверсии просмотров в покупки
 
 Решение ещё дорабатывается. Следите за обновлениями!
+
+[image with robot](https://github.com/avidale/mvideo_hack/presentation/syntetic.png "Outline of our solution")
