@@ -15,13 +15,18 @@ reg_smiles = {
     re.compile(r"[.]{3,}"): ' _PERIOD ',
 }
 
+
 def replace_smiles(text):
     for reg, repl in reg_smiles.items():
         text = re.sub(reg, repl, text)
     return text
-    
+
+
 def tokenize(text):
-    return [word for sent in nltk.sent_tokenize(text) for word in nltk.word_tokenize(sent)]
+    """ Tokenize text with the nltk tokenizer """
+    return [word
+            for sent in nltk.sent_tokenize(text)
+            for word in nltk.word_tokenize(sent)]
 
 morph = pymorphy2.MorphAnalyzer()
 normal_forms = {}

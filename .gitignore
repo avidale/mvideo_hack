@@ -50,6 +50,7 @@ Temporary Items
 *.ipynb_checkpoints*
 *.pyc
 *__pycache__*
+.idea
 
 # raw data
 input*
